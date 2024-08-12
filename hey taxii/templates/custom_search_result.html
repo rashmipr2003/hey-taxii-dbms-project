@@ -1,0 +1,46 @@
+<!-- custom_search_result.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Search Result</title>
+</head>
+<body>
+    <h2>Custom Search Result</h2>
+    {% if results %}
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Ride ID</th>
+                    <th>Start Location</th>
+                    <th>End Location</th>
+                    <th>Fare</th>
+                    <th>Date of Ride</th>
+                    <th>Time of Ride</th>
+                    <th>Customer ID</th>
+                    <th>Driver ID</th>
+                    <!-- Add table headers for other columns -->
+                </tr>
+            </thead>
+            <tbody>
+                {% for result in results %}
+                    <tr>
+                        <td>{{ result.RIDE_ID }}</td>
+                        <td>{{ result.START_LOCATION }}</td>
+                        <td>{{ result.END_LOCATION }}</td>
+                        <td>{{ result.FARE }}</td>
+                        <td>{{ result.DATE_OF_RIDE }}</td>
+                        <td>{{ result.TIME_OF_RIDE }}</td>
+                        <td>{{ result.CUSTOMER_ID }}</td>
+                        <td>{{ result.DRIVER_ID }}</td>
+                        <!-- Add table cells for other columns -->
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No results found.</p>
+    {% endif %}
+</body>
+</html>

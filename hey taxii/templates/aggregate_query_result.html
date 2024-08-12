@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aggregate Query Result</title>
+    
+</head>
+<body>
+    <h1>Aggregate Query Result</h1>
+    
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Driver ID</th>
+                <th>Max Fare</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in result %}
+                <tr>
+                    <td>{{ row.DRIVER_ID }}</td>
+                    <td>{{ row.MaxFare }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
